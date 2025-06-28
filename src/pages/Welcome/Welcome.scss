@@ -1,0 +1,254 @@
+@use "sass:math";
+@use "../../styles/index" as *;
+#welcome {
+  position: relative;
+  width: 100%;
+  height: 400px;
+  margin: 0 auto;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  .welcome-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 400px;
+    background: rgba(9, 9, 50, 0.737);
+  }
+  .welcome {
+    position: relative;
+    display: flex;
+    align-items: start;
+    flex-direction: column;
+    justify-content: center;
+    gap: 20px;
+    h1 {
+      margin-top: 120px;
+      margin-left: 50px;
+      z-index: 2;
+      color: $light-color;
+      font-size: $font-size * 2.5;
+      font-weight: 600;
+    }
+    h2 {
+      margin-left: 50px;
+      z-index: 2;
+      color: $light-color;
+      font-size: $font-size * 1.5;
+      font-weight: 600;
+    }
+    &--form {
+      position: relative;
+      margin-left: 50px;
+      width: $index * 10;
+      height: $index * 0.44;
+      input {
+        outline: none;
+        font-size: $font-size;
+        width: 100%;
+        height: 100%;
+        padding-left: 40px;
+        border-radius: 10rem;
+        &::placeholder {
+          font-size: $font-size * 0.8;
+        }
+      }
+      button {
+        cursor: pointer;
+        background: #2a7b9b;
+        background: linear-gradient(
+          90deg,
+          rgba(42, 123, 155, 1) 0%,
+          rgba(87, 199, 133, 1) 100%,
+          rgba(237, 221, 83, 1) 53%
+        );
+        color: $light-color;
+        position: absolute;
+        top: 2px;
+        right: 0;
+        border: none;
+        width: $index;
+        height: $index * 0.3999;
+        border-radius: 10rem;
+        font-size: $font-size * 0.8;
+      }
+    }
+  }
+}
+.suggest--films {
+  padding: $index * 0.4 0;
+  padding-left: $index;
+  display: flex;
+  align-items: start;
+  flex-direction: column;
+  gap: $gap;
+  &__title {
+    display: flex;
+    gap: $gap;
+    h2 {
+      color: $dark-color;
+    }
+    &--btns {
+      cursor: pointer;
+      border-radius: 10rem;
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      width: $index * 2.5;
+      height: $index * 0.3;
+      background: transparent;
+      border: 2px solid $dark-blue;
+
+      button {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: 0.5s;
+        width: auto;
+        font-size: $font-size * 0.9;
+        height: 100%;
+        border-radius: 10em;
+        padding: 8px 16px;
+        border: none;
+        cursor: pointer;
+        background: transparent;
+        color: black;
+        transition: 0.3s;
+      }
+      .btn--active {
+        background: #032541;
+        color: white;
+      }
+
+      .btn--dark {
+        color: white;
+      }
+    }
+  }
+  &__wrapper {
+    position: relative;
+    width: 80%;
+    height: $index * 3.5;
+    &--block {
+      display: flex;
+      align-items: center;
+      gap: $gap;
+      overflow-x: auto;
+      scrollbar-width: none;
+      height: $index * 3.5;
+    }
+    .fade-right {
+      border-radius: 10px;
+      margin-top: 12px;
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 60px;
+      height: 92%;
+      background: linear-gradient(to left, #f9fafa, transparent);
+      pointer-events: none;
+      transition: opacity 0.3s ease;
+    }
+  }
+}
+
+//RESPONSIVE
+@media (max-width: 1360px) {
+  #welcome {
+    .welcome--form {
+      width: $index * 8;
+    }
+  }
+}
+@media (max-width: 1024px) {
+  #welcome {
+    .welcome {
+      gap: $gap * 0.6;
+      h1 {
+        margin-top: 80px;
+        font-size: $font-size * 2;
+      }
+      h2 {
+        font-size: $font-size * 1.3;
+      }
+      &--form {
+        width: 609px;
+        height: 39px;
+        button {
+          height: 34.99px;
+        }
+      }
+    }
+  }
+}
+@media (max-width: 728px) {
+  #welcome .welcome--form {
+    width: $index * 5;
+  }
+}
+@media (max-width: 628px) {
+  #welcome .welcome--form {
+    width: $index * 4.5;
+  }
+}
+@media (max-width: 616px) {
+  #header .header {
+    gap: 133px;
+  }
+}
+@media (max-width: 598px) {
+  #header .header {
+    gap: 105px;
+  }
+}
+@media (max-width: 570px) {
+  #welcome .welcome {
+    h1 {
+      margin-top: 50px;
+      font-size: 34px;
+    }
+    h2 {
+      font-size: $font-size;
+    }
+    &--form {
+      width: 414px;
+      button {
+        width: 72px;
+        font-size: 14px;
+      }
+    }
+  }
+  .suggest--films {
+    padding-left: 33px;
+}
+}
+@media (max-width: 556px) {
+    #header .header {
+        gap: 67px;
+    }
+}
+@media (max-width: 523px) {
+    #header .header {
+        gap: 41px;
+    }
+}
+@media (max-width: 511px) {
+    #welcome .welcome--form {
+        width: 352px;
+        button {
+        width: 61px;
+    }
+    }
+}
+@media (max-width: 412px) {
+    #welcome .welcome--form {
+        width: 290px;
+        input{
+          &::placeholder{
+            font-size: $font-size * .63;
+          }
+        }
+    }
+}

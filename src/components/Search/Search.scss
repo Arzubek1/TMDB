@@ -1,0 +1,23 @@
+@use "sass:math";
+@use "../../styles/index" as *;
+#search{
+    padding: 40px 20px;
+    h2{
+        color: $dark-color;
+        margin-bottom: 30px;
+        span{
+            color: #bf1504;
+        }
+    }
+    .search{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: $gap * 3;
+        p{
+            color: $dark-blue;
+            font-size: $font-size;
+        }
+    }
+}

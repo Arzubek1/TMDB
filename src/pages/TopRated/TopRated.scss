@@ -1,0 +1,394 @@
+@use "sass:math";
+@use "../../styles/index" as *;
+
+#topRated {
+  padding: 50px 0;
+  h1 {
+    color: $dark-color;
+    margin-left: 20px;
+    padding-bottom: 10px;
+    span {
+      font-weight: 100;
+      color: #bf1504;
+    }
+  }
+  .topRated-title {
+    padding-bottom: 30px;
+    display: flex;
+    align-items: start;
+    justify-content: space-around;
+    .janry {
+      display: flex;
+      align-items: start;
+      justify-content: start;
+      gap: 20px;
+      width: $index * 6;
+      height: 0 auto;
+      margin-left: -62px;
+      h3 {
+        color: black;
+        font-size: $font-size;
+        font-weight: 500;
+      }
+      &--block {
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 20px;
+        h4 {
+          cursor: pointer;
+          font-size: $font-size * 0.7;
+          font-weight: 100;
+          color: black;
+          padding: 1.6px 6.5px;
+          border: 1px solid black;
+          border-radius: 10px;
+          &:hover {
+            background: $dark-blue;
+            color: $light-color;
+          }
+        }
+      }
+    }
+    .recommended--films {
+      display: flex;
+      align-items: start;
+      flex-direction: column;
+      margin-top: -60px;
+      h1 {
+        margin-left: 0px;
+        padding-block: 12px;
+        text-transform: uppercase;
+        font-weight: 300;
+      }
+      &__blocks {
+        width: $index * 5;
+        height: $index * 2;
+        border: none;
+        box-shadow: 3px 12px 24px $dark-blue;
+        margin-bottom: 20px;
+        border-radius: 10px;
+        overflow: hidden;
+        cursor: pointer;
+        &--block {
+          width: 100%;
+          height: 100%;
+          cursor: pointer;
+          position: relative;
+          .films--img {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            img {
+              width: 100%;
+              height: 100%;
+              object-fit: cover;
+            }
+            &__bg {
+              position: absolute;
+              top: 0;
+              left: 0;
+              width: 100%;
+              height: 100%;
+              background: #0000006f;
+            }
+          }
+          h2 {
+            font-size: $font-size;
+            color: $light-color;
+            position: absolute;
+            bottom: 40px;
+            left: 10px;
+            z-index: 3;
+          }
+          h3 {
+            font-size: $font-size * 0.8;
+            color: rgba(255, 255, 255, 0.776);
+            position: absolute;
+            bottom: 22px;
+            left: 10px;
+            z-index: 3;
+          }
+        }
+        &:hover .films--img__bg {
+          display: none;
+        }
+      }
+    }
+  }
+  .topRated {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    row-gap: 30px;
+    column-gap: 30px;
+    &--blocks {
+      display: flex;
+      align-items: start;
+      justify-content: start;
+      flex-wrap: wrap;
+      row-gap: 30px;
+      column-gap: 30px;
+      margin-left: 17px;
+    }
+    .pagination {
+      padding-bottom: 30px;
+      display: inline-flex;
+      align-items: center;
+      gap: $gap;
+      .double1 {
+        cursor: pointer;
+        margin-right: -10px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: $font-size * 1.3;
+        width: $index * 0.6;
+        height: $index * 0.35;
+        background: map-get($theme, primary);
+        border: none;
+        border-bottom-left-radius: 10rem;
+        border-top-left-radius: 10rem;
+        color: $light-color;
+        span {
+          font-size: 13px;
+        }
+      }
+      .double2 {
+        cursor: pointer;
+        margin-left: -10px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: $font-size * 1.3;
+        width: $index * 0.6;
+        height: $index * 0.35;
+        background: map-get($theme, primary);
+        border: none;
+        border-bottom-right-radius: 10rem;
+        border-top-right-radius: 10rem;
+        color: $light-color;
+        span {
+          font-size: 13px;
+        }
+      }
+      h3 {
+        color: $dark-blue;
+        font-size: $font-size;
+      }
+      button {
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: $font-size * 1.3;
+        width: $index * 0.4;
+        height: $index * 0.4;
+        background: map-get($theme, primary);
+        border: none;
+        border-radius: 50%;
+        color: $light-color;
+      }
+    }
+  }
+}
+
+// ADAPTATION (copied fully from Popular.scss and adapted to TopRated)
+@media (max-width: 1440px) {
+  #topRated h1 {
+    margin-left: 91px;
+  }
+  #topRated .topRated--blocks {
+    justify-content: center;
+  }
+  #topRated .topRated-title {
+    .janry {
+      margin-left: 56px;
+      flex-direction: column;
+    }
+    .recommended--films {
+      align-items: end;
+      &__blocks {
+        width: $index * 4.4;
+      }
+    }
+  }
+}
+@media (max-width: 1300px) {
+  #topRated h1 {
+    margin-left: 69px;
+  }
+  #topRated .topRated-title .recommended--films h1 {
+    font-size: $font-size * 1.3;
+  }
+}
+@media (max-width: 1240px) {
+  #topRated .topRated--blocks {
+    row-gap: 40px;
+    column-gap: 60px;
+  }
+}
+@media (max-width: 1100px) {
+  #topRated .topRated--blocks {
+    row-gap: 35px;
+    column-gap: 48px;
+  }
+}
+@media (max-width: 1070px) {
+  #topRated .topRated--blocks {
+    row-gap: 29px;
+    column-gap: 28px;
+  }
+}
+@media (max-width: 1001px) {
+  #topRated .topRated--blocks {
+    row-gap: 29px;
+    column-gap: 25px;
+  }
+}
+@media (max-width: 992px) {
+  #topRated h1 {
+    margin-left: 0px;
+  }
+  #topRated .topRated-title .janry--block {
+    gap: 12px;
+  }
+  #topRated .topRated-title .recommended--films h1 {
+    font-size: 21px;
+  }
+  #topRated .topRated-title .recommended--films__blocks {
+    width: 320px;
+    height: 172px;
+  }
+  .card {
+    width: 181px;
+    height: 281px;
+  }
+  #topRated .topRated .pagination {
+    h3 {
+      font-size: 15px;
+    }
+    gap: 13px;
+    button {
+      font-size: 17px;
+      width: 30px;
+      height: 30px;
+    }
+    .double1,
+    .double2 {
+      font-size: 12px;
+      width: 40px;
+      height: 26px;
+    }
+  }
+}
+@media (max-width: 729px) {
+  #topRated h1 {
+    font-size: $font-size;
+  }
+  .card {
+    h3 {
+      top: 241px;
+      font-size: $font-size * 0.8;
+    }
+    h4 {
+      top: 230px;
+    }
+  }
+  #topRated .topRated-title .recommended--films__blocks {
+    width: 262px;
+    height: 143px;
+  }
+}
+@media (max-width: 678px) {
+  .card {
+    width: 172px;
+    height: 237px;
+    h4 {
+      top: 180px;
+    }
+    h3 {
+      top: 192px;
+    }
+  }
+}
+@media (max-width: 648px) {
+  .card {
+    width: 155px;
+    height: 231px;
+  }
+}
+@media (max-width: 591px) {
+  .card {
+    width: 221px;
+    height: 254px;
+    h4 {
+      top: 198px;
+    }
+    h3 {
+      top: 214px;
+    }
+  }
+}
+@media (max-width: 538px) {
+  .card {
+    width: 200px;
+    height: 254px;
+  }
+}
+@media (max-width: 491px) {
+  .card {
+    width: 186px;
+    height: 248px;
+  }
+}
+@media (max-width: 460px) {
+  #topRated .topRated-title .recommended--films__blocks {
+    width: 210px;
+    height: 114px;
+  }
+  .card {
+    width: 173px;
+    height: 239px;
+  }
+}
+@media (max-width: 431px) {
+  .card {
+    width: 163px;
+    height: 227px;
+    h4 {
+      top: 180px;
+    }
+    h3 {
+      top: 190px;
+    }
+  }
+}
+@media (max-width: 409px) {
+  .card {
+    width: 157px;
+    height: 223px;
+  }
+}
+@media (max-width: 396px) {
+  #topRated .topRated-title .recommended--films__blocks {
+    width: 191px;
+    height: 109px;
+  }
+  .card {
+    width: 310px;
+  }
+}
+@media (max-width: 349px) {
+  #topRated .topRated-title .recommended--films__blocks {
+    display: none;
+  }
+  #topRated .topRated-title .recommended--films h1 {
+    display: none;
+  }
+  .card {
+    width: 292px;
+    height: 209px;
+  }
+}

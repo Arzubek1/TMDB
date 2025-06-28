@@ -1,0 +1,235 @@
+@use "sass:math";
+@use "../../styles/index" as *;
+#movieDetails {
+  -webkit-box-shadow: 0 5px 100px 600px rgba(0, 0, 0, 0.78) inset;
+  -moz-box-shadow: 0 5px 100px 600px rgba(0, 0, 0, 0.78) inset;
+  box-shadow: 0 5px 10px 600px rgba(0, 0, 0, 0.813) inset;
+  padding-top: 24px;
+  width: 100%;
+  height: 600px;
+  .movieDetails {
+    padding-top: 50px;
+    display: flex;
+    align-items: start;
+    gap: $gap * 4;
+    &--img {
+      flex-shrink: 0;
+      width: $index * 3;
+      height: $index * 4;
+      border-radius: 12px;
+      overflow: hidden;
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+    &--content {
+      &__info {
+        h3 {
+          display: flex;
+          gap: 10px;
+          color: #696a6a;
+        }
+      }
+      .rating {
+        padding-top: 30px;
+        display: flex;
+        align-items: center;
+        gap: $gap;
+        .rating-div {
+          transition: 0.4s;
+          cursor: pointer;
+          &:hover {
+            transform: scale(1.06);
+          }
+        }
+        h2 {
+          font-size: $font-size * 0.8;
+        }
+        h3 {
+          cursor: pointer;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          gap: 5px;
+          font-size: $font-size * 0.8;
+          width: $index * 1.8;
+          height: $index * 0.4;
+          border-radius: 10rem;
+          border: none;
+          background: $dark-blue;
+          color: $light-color;
+          transition: 0.6s ease;
+          span {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: $light-color;
+            font-size: $font-size;
+            width: $index * 0.2;
+            height: $index * 0.2;
+            border-radius: 50%;
+            color: $dark-blue;
+          }
+          &:hover {
+            transform: scale(1.1);
+          }
+        }
+      }
+      &__icons {
+        padding-top: $index * 0.2;
+        display: flex;
+        align-items: center;
+        gap: $gap;
+
+        h2 {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          cursor: pointer;
+          width: $index * 0.5;
+          height: $index * 0.5;
+          border-radius: 50%;
+          background: $dark-blue;
+        }
+        h3 {
+          display: flex;
+          align-items: center;
+          gap: $gap * 0.4;
+          cursor: pointer;
+          span {
+            font-size: $font-size * 0.9;
+            font-weight: 300;
+            letter-spacing: 1px;
+          }
+          &:hover {
+            span {
+              color: rgba(255, 255, 255, 0.71);
+            }
+          }
+        }
+      }
+      &__text {
+        padding-top: $index * 0.3;
+        h2 {
+          font-size: $font-size;
+          font-weight: 300;
+        }
+        h1 {
+          font-size: $font-size * 1.7;
+          font-weight: 500;
+        }
+        p {
+          font-size: $font-size * 0.9;
+          letter-spacing: 0.5px;
+        }
+      }
+    }
+  }
+}
+
+.tippy-box[data-theme="custom-theme"] {
+  background-color: #032541;
+  color: #fff;
+  font-size: $font-size * 0.7;
+  padding: $index * 0.03 $index * 0.09;
+  border-radius: 6px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+}
+.tippy-box[data-theme="custom-theme"] .tippy-arrow {
+  background-color: #032541;
+}
+
+@media (max-width: 913px) {
+  #movieDetails .movieDetails--content__icons h2 {
+    width: 40px;
+    height: 40px;
+    font-size: $font-size;
+  }
+}
+@media (max-width: 880px) {
+  #movieDetails {
+    height: 400px;
+  }
+  #movieDetails .movieDetails--content .rating {
+    padding-top: 2px;
+  }
+  #movieDetails .movieDetails--content__text {
+    padding-top: 12px;
+  }
+  #movieDetails .movieDetails--content__text p {
+    font-size: 13px;
+  }
+  #movieDetails .movieDetails--content__text h2 {
+    font-size: 14px;
+  }
+  #movieDetails .movieDetails--content__text h1 {
+    font-size: 26px;
+    font-weight: 100;
+  }
+  #movieDetails .movieDetails--content .rating h3 {
+    font-size: 13px;
+    width: 142px;
+    height: 31px;
+  }
+  .movieDetails--content {
+    h1 {
+      font-size: $font-size * 1.2;
+    }
+    &__info {
+      h3 {
+        span {
+          font-size: $font-size * 0.7;
+        }
+      }
+    }
+  }
+  #movieDetails .movieDetails--img {
+    width: 229px;
+    height: 326px;
+  }
+}
+@media (max-width: 751px) {
+  #movieDetails .movieDetails {
+    padding-top: 0px;
+    gap: 38px;
+  }
+  #movieDetails .movieDetails--content__icons h2 {
+    width: 30px;
+    height: 30px;
+    font-size: 12px;
+  }
+  #movieDetails .movieDetails--content__icons h3 {
+    gap: 0px;
+    span {
+      font-size: 12px;
+      font-weight: 100;
+    }
+  }
+  #movieDetails .movieDetails--content__text p {
+    font-size: 10px;
+    font-weight: 100;
+  }
+  #movieDetails .movieDetails--content__text h1 {
+    font-size: 16px;
+  }
+}
+@media (max-width: 608px) {
+  #movieDetails .movieDetails--content .rating {
+    flex-direction: column;
+    align-items: start;
+  }
+  element.style {
+    width: 40px;
+    height: 40px;
+  }
+  #movieDetails .movieDetails--content .rating {
+    gap: 0px;
+  }
+}
+@media (max-width: 560px) {
+ #movieDetails .movieDetails--img {
+    display: none;
+}
+}

@@ -1,0 +1,61 @@
+@use "sass:math";
+@use "../../styles/index" as *;
+#actors {
+  padding: 30px 0;
+  h1 {
+    color: $dark-color;
+  }
+  .actors--wrapper {
+    position: relative;
+    width: 70%;
+    margin: 30px 0;
+    .actors {
+      display: flex;
+      align-items: center;
+      gap: $gap;
+      overflow-x: auto;
+      height: $index * 3.3;
+      &--blocks {
+        cursor: pointer;
+        flex-shrink: 0;
+        width: $index * 2;
+        height: $index * 3;
+        border-radius: 10px;
+        overflow: hidden;
+        box-shadow: 0 3px 8px gray;
+        img {
+          width: 100%;
+          height: $index * 2;
+          object-fit: cover;
+        }
+        &__info {
+          padding-left: 20px;
+          padding-top: 10px;
+          h3 {
+            color: $dark-color;
+          }
+          h4 {
+            color: gray;
+          }
+        }
+      }
+    }
+    .fade-right {
+      margin-top: 6px;
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 60px;
+      height: 92%;
+      background: linear-gradient(to left, #032541, transparent);
+      pointer-events: none;
+      transition: opacity 0.3s ease;
+    }
+  }
+}
+
+@media (max-width: 1280px) {
+  #actors .actors--wrapper {
+    width: 84%;
+  }
+}

@@ -1,0 +1,484 @@
+@use "sass:math";
+@use "../../styles/index" as *;
+
+#popular {
+  padding: 30px 0;
+  h1 {
+    color: $dark-color;
+    margin-left: 20px;
+    padding-bottom: 10px;
+    span {
+      font-weight: 100;
+      color: #bf1504;
+    }
+  }
+  .popular-title {
+    padding-bottom: 30px;
+    display: flex;
+    align-items: start;
+    justify-content: space-around;
+
+    .janry {
+      display: flex;
+      align-items: start;
+      justify-content: start;
+      gap: 20px;
+      width: $index * 6;
+      margin-left: -62px;
+      height: 0 auto;
+      h3 {
+        color: black;
+        font-size: $font-size;
+        font-weight: 500;
+      }
+      &--block {
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 20px;
+        h4 {
+          cursor: pointer;
+          font-size: $font-size * 0.7;
+          font-weight: 100;
+          color: black;
+          padding: 1.6px 6.5px;
+          border: 1px solid black;
+          border-radius: 10px;
+          &:hover {
+            background: $dark-blue;
+            color: $light-color;
+          }
+        }
+      }
+    }
+    .recommended--films {
+      display: flex;
+      align-items: start;
+      flex-direction: column;
+      margin-top: -60px;
+      h1 {
+        margin-left: 0px;
+        padding-block: 12px;
+        text-transform: uppercase;
+        font-weight: 300;
+      }
+      &__blocks {
+        width: $index * 5;
+        height: $index * 2;
+        border: none;
+        box-shadow: 3px 12px 24px $dark-blue;
+        margin-bottom: 20px;
+        border-radius: 10px;
+        overflow: hidden;
+        cursor: pointer;
+        &--block {
+          width: 100%;
+          height: 100%;
+          cursor: pointer;
+          position: relative;
+          .films--img {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            img {
+              width: 100%;
+              height: 100%;
+              object-fit: cover;
+            }
+            &__bg {
+              position: absolute;
+              top: 0;
+              left: 0;
+              width: 100%;
+              height: 100%;
+              background: #0000006f;
+            }
+          }
+          h2 {
+            font-size: $font-size;
+            color: $light-color;
+            position: absolute;
+            bottom: 40px;
+            left: 10px;
+            z-index: 3;
+          }
+          h3 {
+            font-size: $font-size * 0.8;
+            color: rgba(255, 255, 255, 0.776);
+            position: absolute;
+            bottom: 22px;
+            left: 10px;
+            z-index: 3;
+          }
+        }
+        &:hover .films--img__bg {
+          display: none;
+        }
+      }
+    }
+  }
+  .popular {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    row-gap: 30px; // Жогорку жана төмөнкү аралыктар
+    column-gap: 30px; // Сол жана оң аралыктар
+    &--blocks {
+      display: flex;
+      align-items: start;
+      justify-content: start;
+      flex-wrap: wrap;
+      row-gap: 30px; // Жогорку жана төмөнкү аралыктар
+      column-gap: 30px; // Сол жана оң аралыктар
+      margin-left: 17px;
+    }
+    .pagination {
+      padding-bottom: 30px;
+      display: inline-flex;
+      align-items: center;
+      gap: $gap;
+      .double1 {
+        cursor: pointer;
+        margin-right: -10px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: $font-size * 1.3;
+        width: $index * 0.6;
+        height: $index * 0.35;
+        background: map-get($theme, primary);
+        border: none;
+        border-bottom-left-radius: 10rem;
+        border-top-left-radius: 10rem;
+        color: $light-color;
+        span {
+          font-size: 13px;
+        }
+      }
+      .double2 {
+        cursor: pointer;
+        margin-left: -10px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: $font-size * 1.3;
+        width: $index * 0.6;
+        height: $index * 0.35;
+        background: map-get($theme, primary);
+        border: none;
+        border-bottom-right-radius: 10rem;
+        border-top-right-radius: 10rem;
+        color: $light-color;
+        span {
+          font-size: 13px;
+        }
+      }
+      h3 {
+        color: $dark-blue;
+        font-size: $font-size;
+      }
+      button {
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: $font-size * 1.3;
+        width: $index * 0.4;
+        height: $index * 0.4;
+        background: map-get($theme, primary);
+        border: none;
+        border-radius: 50%;
+        color: $light-color;
+      }
+    }
+  }
+}
+
+//ADAPTATION
+
+@media (max-width: 1440px) {
+  #popular h1 {
+    margin-left: 91px;
+  }
+  #popular .popular--blocks {
+    justify-content: center;
+  }
+  #popular .popular-title {
+    .janry {
+      margin-left: 56px;
+      flex-direction: column;
+    }
+    .recommended--films {
+      align-items: end;
+      &__blocks {
+        width: $index * 4.4;
+      }
+    }
+  }
+}
+@media (max-width: 1300px) {
+  #popular h1 {
+    margin-left: 69px;
+  }
+  #popular .popular-title .recommended--films h1 {
+    font-size: $font-size * 1.3;
+  }
+}
+@media (max-width: 1240px) {
+  #popular .popular--blocks {
+    row-gap: 40px;
+    column-gap: 60px;
+  }
+}
+@media (max-width: 1100px) {
+  #popular .popular--blocks {
+    row-gap: 35px;
+    column-gap: 48px;
+  }
+}
+@media (max-width: 1070px) {
+  #popular .popular--blocks {
+    row-gap: 29px;
+    column-gap: 28px;
+  }
+}
+@media (max-width: 1001px) {
+  #popular .popular--blocks {
+    row-gap: 29px;
+    column-gap: 25px;
+  }
+}
+@media (max-width: 992px) {
+  #popular h1 {
+    margin-left: 0px;
+  }
+  #popular .popular-title .janry--block {
+    gap: 12px;
+  }
+  #popular .popular-title .recommended--films h1 {
+    font-size: 21px;
+  }
+  #popular .popular-title .recommended--films__blocks {
+    width: 320px;
+    height: 172px;
+  }
+  .card {
+    width: 181px;
+    height: 281px;
+  }
+  #popular .popular .pagination {
+    h3 {
+      font-size: 15px;
+    }
+    gap: 13px;
+    button {
+      font-size: 17px;
+      width: 30px;
+      height: 30px;
+    }
+    .double1 {
+      font-size: 12px;
+      width: 40px;
+      height: 26px;
+    }
+    .double2 {
+      font-size: 12px;
+      width: 40px;
+      height: 26px;
+    }
+  }
+}
+
+@media (max-width: 908px) {
+  .card {
+    width: 170px;
+    height: 256px;
+  }
+  .card--info {
+    h4 {
+      top: 204px;
+    }
+    h3 {
+      top: 220px;
+    }
+  }
+}
+@media (max-width: 878px) {
+  #popular .popular-title {
+    gap: 30px;
+    margin-left: -40px;
+  }
+}
+@media (max-width: 860px) {
+  .card {
+    width: 220px;
+    height: 286px;
+    &--info {
+      h3 {
+        top: 247px;
+      }
+      h4 {
+        top: 230px;
+      }
+    }
+  }
+}
+@media (max-width: 808px) {
+  .card {
+    width: 196px;
+    height: 250px;
+    &--info {
+      h3 {
+        top: 220px;
+        font-size: $font-size * 0.6;
+      }
+      h4 {
+        top: 200px;
+      }
+    }
+  }
+}
+@media (max-width: 780px) {
+  #popular h1 {
+    font-size: $font-size;
+  }
+  #popular .popular-title .recommended--films h1 {
+    font-size: 16px;
+  }
+}
+@media (max-width: 728px) {
+  .card {
+    width: 169px;
+    height: 225px;
+    .circularProgressbar {
+      bottom: 49px;
+      right: 12px;
+    }
+    h3 {
+      top: 190px;
+    }
+    h4 {
+      top: 172px;
+      font-size: $font-size * 0.6;
+    }
+  }
+}
+@media (max-width: 638px) {
+  #popular .popular-title .recommended--films__blocks {
+    width: 257px;
+    height: 152px;
+    &--block {
+      h2 {
+        font-size: 17px;
+      }
+      h3 {
+        font-size: 12px;
+      }
+    }
+  }
+  .card {
+    width: 220px;
+    height: 260px;
+    .circularProgressbar {
+      bottom: 57px;
+      right: 12px;
+    }
+    h3 {
+      top: 220px;
+      font-size: $font-size * 0.9;
+    }
+    h4 {
+      top: 201px;
+      font-size: $font-size * 0.6;
+    }
+  }
+}
+@media (max-width: 536px) {
+  #popular .popular-title .recommended--films {
+    margin-top: -12px;
+  }
+  .card {
+    width: 202px;
+    height: 249px;
+    h3 {
+      font-size: 16px;
+    }
+  }
+}
+@media (max-width: 496px) {
+  .card {
+    width: 180px;
+    height: 234px;
+    h3 {
+      top: 190px;
+    }
+    h4 {
+      top: 180px;
+    }
+  }
+}
+@media (max-width: 447px) {
+  .card {
+    width: 164px;
+    height: 223px;
+  }
+  #popular .popular-title .recommended--films__blocks {
+    width: 193px;
+    height: 123px;
+  }
+}
+@media (max-width: 456px) {
+  #header .header {
+    gap: 0px;
+  }
+}
+@media (max-width: 411px) {
+  #header .header {
+    gap: 70px;
+  }
+  .card {
+    width: 151px;
+    height: 209px;
+    h4 {
+      top: 160px;
+    }
+    h3 {
+      top: 172px;
+      font-size: $font-size * 0.6;
+    }
+  }
+}
+@media (max-width: 382px) {
+  .card {
+    width: 141px;
+    height: 195px;
+  }
+  .card .circularProgressbar {
+    bottom: 42px;
+  }
+}
+@media (max-width: 360px) {
+    .card {
+        width: 126px;
+        height: 188px;
+    }
+}
+@media (max-width: 327px) {
+    .card {
+        width: 121px;
+        height: 181px;
+        h4{
+          top: 140px;
+        }
+        h3{
+          top: 156px;
+        }
+    }
+}
+@media (max-width: 316px) {
+    .card {
+        width: 117px;
+        height: 179px;
+    }
+}

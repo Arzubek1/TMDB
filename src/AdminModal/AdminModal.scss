@@ -1,0 +1,46 @@
+@use "sass:math";
+@use "../styles/index.scss" as *;
+
+#adminModal {
+  width: 100%;
+  min-height: 100vh;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: rgba(0, 0, 15, 0.808);
+  backdrop-filter: blur(4px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  .adminModal {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    &--block {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      box-shadow: 0 16px 32px black;
+      background: #072035fb;
+      gap: $gap;
+      width: $index * 6;
+      height: $index * 4;
+      border: 2px solid white;
+      margin: 0 auto;
+    }
+    input {
+      width: $index * 4;
+      height: $index * 0.4;
+      font-size: $font-size;
+      padding-left: 10px;
+      outline: none;
+    }
+    button {
+      font-size: $font-size;
+      width: $index;
+      height: $index * 0.3;
+      cursor: pointer;
+    }
+  }
+}

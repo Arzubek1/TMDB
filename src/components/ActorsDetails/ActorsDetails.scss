@@ -1,0 +1,172 @@
+@use "sass:math";
+@use "../../styles/index.scss" as *;
+#actorsDetails {
+  padding-bottom: 30px;
+  width: 100%;
+  .actorsDetailsTOP {
+    padding-top: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 100%;
+    .menu {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: black;
+      margin-bottom: 8px;
+      gap: $gap * 5;
+      h3 {
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        font-size: $font-size * 0.9;
+        font-weight: 300;
+      }
+    }
+    hr {
+      color: black;
+      background: #000;
+      width: 100%;
+    }
+  }
+  .actorsDetails {
+    padding-block: 40px;
+    display: flex;
+    align-items: start;
+    justify-content: space-between;
+    gap: $gap * 5;
+    &--image {
+      flex-shrink: 0;
+      width: $index * 4;
+      height: $index * 6;
+      border-radius: 10px;
+      overflow: hidden;
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+    &--content {
+      color: $dark-color;
+      h1 {
+        display: flex;
+        flex-direction: column;
+        font-size: $font-size * 2;
+        padding-bottom: $index;
+        span {
+          font-size: $font-size * 0.8;
+        }
+      }
+      h3 {
+        font-size: $font-size * 1.2;
+        padding-bottom: $index * 0.2;
+      }
+      p {
+        width: $index * 8;
+        font-size: $font-size * 0.9;
+        letter-spacing: 0.3px;
+        line-height: $index * 0.24;
+        padding-bottom: $index * 0.2;
+        .read-more {
+          color: #007bff;
+          cursor: pointer;
+          margin-left: 5px;
+          font-weight: 500;
+          &:hover {
+            text-decoration: underline;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 1400px) {
+  #actorsDetails .actorsDetails--content p {
+    width: 670px;
+  }
+}
+@media (max-width: 1250px) {
+  #actorsDetails .actorsDetails--image {
+    width: 340px;
+    height: 452px;
+  }
+  #actorsDetails .actorsDetails--content h1 {
+    font-size: 33px;
+    padding-bottom: 34px;
+  }
+}
+@media (max-width: 1171px) {
+  #actorsDetails .actorsDetails--content p {
+    width: 509px;
+  }
+  #actorsDetails .actorsDetails {
+    gap: 0;
+  }
+  #actorsDetails .actorsDetails--image {
+    width: 277px;
+    height: 382px;
+  }
+}
+@media (max-width: 988px) {
+  #actorsDetails .actorsDetails--content p {
+    font-size: 14px;
+    letter-spacing: 0.2px;
+    line-height: 17px;
+  }
+  #actorsDetails .actorsDetails--content h1 {
+    font-size: 27px;
+    span {
+      font-size: 12px;
+    }
+  }
+  #actorsDetails .actorsDetails--image {
+    width: 234px;
+    height: 280px;
+  }
+}
+@media (max-width: 952px) {
+  #actorsDetails .actorsDetails {
+    gap: 40px;
+  }
+  #actorsDetails .actorsDetails--content p {
+    width: 414px;
+  }
+  #actorsDetails .actorsDetails--image {
+    width: 257px;
+    height: 314px;
+  }
+}
+@media (max-width: 836px) {
+  #actorsDetails .actorsDetails--content p {
+    width: 269px;
+  }
+  #actorsDetails .actorsDetails--image {
+    width: 283px;
+    height: 308px;
+  }
+}
+@media (max-width: 720px) {
+  #actorsDetails .actorsDetailsTOP .menu {
+    gap: 59px;
+  }
+}
+@media (max-width: 626px) {
+  #actorsDetails .actorsDetails--content p {
+    width: 187px;
+  }
+  #actorsDetails .actorsDetails {
+    gap: 7px;
+  }
+}
+@media (max-width: 618px) {
+  #actorsDetails .actorsDetailsTOP .menu {
+    gap: 42px;
+    h3 {
+      font-size: $font-size * 0.8;
+    }
+  }
+}

@@ -1,0 +1,23 @@
+@use './theme';
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: sans-serif;
+  background-color: map-get(theme.$theme, bg-light);
+  color: map-get(theme.$theme, text);
+}
+a{
+  text-decoration: none;
+}
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-thumb {
+  background: gray;
+  border-radius: 4px;
+}
