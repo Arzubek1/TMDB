@@ -22,7 +22,10 @@ const Header = () => {
   const themeRef = useRef(null);
   const [adminModal, setAdminModal] = useState(false);
   const [responsModal, setResponsModal] = useState(false);
-
+  const [resFilms, setResFilms] = useState(false);
+  const [resSerial, setResSerial] = useState(false);
+  const [resPersons, setResPersons] = useState(false);
+  const responseRef = useRef(null);
   const [isAdminLogged, setIsAdminLogged] = useState(() => {
     return localStorage.getItem("admin") === "true";
   });
@@ -72,7 +75,14 @@ const Header = () => {
     setLanguageModalOne(false);
     setLanguageModalTwo(false);
   }
-
+  function resPopular() {
+    navigate("/popular");
+    setResponsModal(false);
+  }
+  function resTop() {
+    navigate("/topRated");
+    setResponsModal(false);
+  }
   // Тышка клик болгондо тил модалын жабуу
   useEffect(() => {
     const handleClickOutside = (e) => {
@@ -83,6 +93,9 @@ const Header = () => {
 
       if (themeRef.current && !themeRef.current.contains(e.target)) {
         setThemeModal(false);
+      }
+      if (responseRef.current && !responseRef.current.contains(e.target)) {
+        setResponsModal(false);
       }
     };
 
@@ -101,37 +114,172 @@ const Header = () => {
             <Link to={"/"}>
               <img src={logo} alt="img" />
             </Link>
-            <div className="respons-menu" style={{marginLeft: responsModal ? "0" : "-400px", transition: ".7s"}}>
-              <h1 onClick={() => setResponsModal(false)}>
+            <div
+              className="respons-menu"
+              style={{
+                marginLeft: responsModal ? "0" : "-400px",
+                transition: ".7s",
+                background: dark && "#010137",
+              }}
+              ref={responseRef}
+            >
+              <h1
+                onClick={() => setResponsModal(false)}
+                style={{ color: dark && "white" }}
+              >
                 <HiOutlineArrowNarrowLeft />
-                Exit
+                close
               </h1>
-              <div className="films">
-                <h3>{translations.headerNav1[language]}</h3>
-                <div className="drop-films">
-                  <a onClick={() => navigate("/popular")}>
-                    {translations.popular[language]}
-                  </a>
-                  <a onClick={() => navigate("/topRated")}>
-                    {translations.topRated[language]}
-                  </a>
-                  <a>{translations.new[language]}</a>
-                </div>
+              <div
+                className="films"
+                style={{
+                  height: resFilms ? "200px" : "50px",
+                  transition: ".7s",
+                }}
+              >
+                <h3
+                  onClick={() => setResFilms(!resFilms)}
+                  style={{ color: dark && "white" }}
+                >
+                  • {translations.headerNav1[language]}
+                </h3>
+
+                <a
+                  onClick={() => resPopular()}
+                  style={{
+                    background: dark && "transparent",
+                    color: dark && "white",
+                  }}
+                >
+                  • {translations.popular[language]}
+                </a>
+                <a
+                  onClick={() => resTop()}
+                  style={{
+                    background: dark && "transparent",
+                    color: dark && "white",
+                  }}
+                >
+                  • {translations.topRated[language]}
+                </a>
+                <a
+                  style={{
+                    background: dark && "transparent",
+                    color: dark && "white",
+                  }}
+                >
+                  • {translations.new[language]}
+                </a>
               </div>
-              <div className="serial">
-                <h3>{translations.headerNav2[language]}</h3>{" "}
-                <div className="drop-serial">
-                  <a>{translations.turkish[language]}</a>
-                  <a>{translations.russian[language]}</a>
-                  <a>{translations.korean[language]}</a>
-                </div>
+              <div
+                className="serial"
+                style={{
+                  height: resSerial ? "200px" : "50px",
+                  transition: ".7s",
+                }}
+              >
+                <h3
+                  onClick={() => setResSerial(!resSerial)}
+                  style={{ color: dark && "white" }}
+                >
+                  • {translations.headerNav2[language]}
+                </h3>{" "}
+                <a
+                  style={{
+                    background: dark && "transparent",
+                    color: dark && "white",
+                  }}
+                >
+                  • {translations.turkish[language]}
+                </a>
+                <a
+                  style={{
+                    background: dark && "transparent",
+                    color: dark && "white",
+                  }}
+                >
+                  • {translations.russian[language]}
+                </a>
+                <a
+                  style={{
+                    background: dark && "transparent",
+                    color: dark && "white",
+                  }}
+                >
+                  • {translations.korean[language]}
+                </a>
               </div>
-              <div className="persons">
-                <h3>{translations.headerNav3[language]} </h3>{" "}
-                <div className="drop-persons">
-                  <a>{translations.actors[language]}</a>
-                  <a>{translations.actresses[language]}</a>
-                </div>
+               <div
+                className="themeres"
+                style={{
+                  height: themeModal ? "200px" : "50px",
+                  transition: ".7s",
+                }}
+              >
+                <h3
+                  onClick={() => setThemeModal(!themeModal)}
+                  style={{ color: dark && "white" }}
+                >
+                  • {translations.theme[language]}
+                </h3>{" "}
+                <a
+                  style={{
+                    background: dark && "transparent",
+                    color: dark && "white",
+                  }}
+                  onClick={lightLocal}
+                >
+                  • {translations.light[language]}
+                </a>
+                <a
+                  style={{
+                    background: dark && "transparent",
+                    color: dark && "white",
+                  }}
+                  onClick={darkLocal}
+                >
+                  • {translations.dark[language]}
+                </a>
+                <a
+                  style={{
+                    background: dark && "transparent",
+                    color: dark && "white",
+                  }}
+                  onClick={systemLocal}
+                >
+                  • system
+                </a>
+               
+              </div>
+              <div
+                className="persons"
+                style={{
+                  height: resPersons ? "200px" : "50px",
+                  transition: ".7s",
+                }}
+              >
+                <h3
+                  onClick={() => setResPersons(!resPersons)}
+                  style={{ color: dark && "white" }}
+                >
+                  • {translations.headerNav3[language]}{" "}
+                </h3>{" "}
+                <a
+                  style={{
+                    background: dark && "transparent",
+                    color: dark && "white",
+                  }}
+                >
+                  • {translations.actors[language]}
+                </a>
+                <a
+                  style={{
+                    background: dark && "transparent",
+                    color: dark && "white",
+                  }}
+                >
+                  • {translations.actresses[language]}
+                </a>
               </div>
             </div>
             <div className="main-nav">
@@ -208,7 +356,10 @@ const Header = () => {
                   height: languageModalTwo ? "200px" : "80px",
                 }}
               >
-                <h3 onClick={() => setLanguageModalTwo(true)} className="subLangugeblock">
+                <h3
+                  onClick={() => setLanguageModalTwo(true)}
+                  className="subLangugeblock"
+                >
                   {language}
                   <span>
                     <MdKeyboardArrowDown />

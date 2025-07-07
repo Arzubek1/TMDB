@@ -27,7 +27,7 @@
       align-items: center;
       gap: 30px;
       h2 {
-        display: none;
+        display: flex;
         position: absolute;
         left: $index * 0.2;
         cursor: pointer;
@@ -42,13 +42,14 @@
         height: 120px;
       }
       .respons-menu {
-        display: none;
+        display: flex;
+        flex-direction: column;
         position: absolute;
         top: 0;
         left: 0;
         width: $index * 2.5;
-        height: $index * 7.3;
-        background: rgb(29, 3, 41);
+        height: $index * 7.5;
+        background: white;
         padding-top: $index * 0.5;
         padding-left: $index * 0.6;
         h1 {
@@ -60,93 +61,105 @@
           align-items: center;
           gap: $gap * 0.3;
           cursor: pointer;
+          color: $dark-color;
         }
         .films {
+          display: flex;
+          flex-direction: column;
           cursor: pointer;
           position: relative;
           padding: 17px 0;
           overflow: hidden;
-          &:hover {
-            height: $index * 2;
-          }
+
           h3 {
             font-size: $font-size;
+            padding-block: 12px;
+            color: $dark-color;
           }
-          .drop-films {
-            display: flex;
-            flex-direction: column;
-            position: absolute;
-            top: $index * 0.55;
+          a {
+            padding: 10px 0;
+            padding-left: 10px;
             width: 100%;
-            background: rgb(22, 22, 56);
-
-            a {
-              padding: 10px 0;
-              padding-left: 10px;
-              width: 100%;
-              &:hover {
-                background: #00000095;
-              }
+            background: white;
+            color: black;
+            transition: 0.5s;
+            &:hover {
+              background: #00000061;
             }
           }
         }
         .serial {
+          display: flex;
+          flex-direction: column;
           cursor: pointer;
           position: relative;
           padding: 17px 0;
           overflow: hidden;
-          &:hover {
-            height: $index * 1.8;
-          }
-          h3 {
-            font-size: $font-size;
-          }
-          .drop-serial {
-            display: flex;
-            flex-direction: column;
-            position: absolute;
-            top: $index * 0.55;
-            width: 100%;
-            background: rgb(22, 22, 56);
 
-            a {
-              padding: 10px 0;
-              padding-left: 10px;
-              width: 100%;
-              color: $light-color;
-              &:hover {
-                background: #00000095;
-              }
+          h3 {
+            color: $dark-color;
+            font-size: $font-size;
+            padding-block: 12px;
+          }
+          a {
+            background: white;
+            color: black;
+            padding: 10px 0;
+            padding-left: 10px;
+            width: 100%;
+            transition: 0.7s;
+            &:hover {
+              background: #00000095;
+            }
+          }
+        }
+        .themeres {
+          display: flex;
+          flex-direction: column;
+          cursor: pointer;
+          position: relative;
+          padding: 17px 0;
+          overflow: hidden;
+
+          h3 {
+            color: $dark-color;
+            font-size: $font-size;
+            padding-block: 12px;
+          }
+          a {
+            background: white;
+            color: black;
+            padding: 10px 0;
+            padding-left: 10px;
+            width: 100%;
+            transition: 0.7s;
+            &:hover {
+              background: #00000095;
             }
           }
         }
         .persons {
+          display: flex;
+          flex-direction: column;
           cursor: pointer;
           position: relative;
           padding: 17px 0;
           overflow: hidden;
-          &:hover {
-            height: $index * 1.2;
-          }
           h3 {
             font-size: $font-size;
+            padding-block: 12px;
+            color: $dark-color;
           }
-          .drop-persons {
-            display: flex;
-            flex-direction: column;
-            position: absolute;
-            top: $index * 0.55;
-            width: 100%;
-            background: rgb(22, 22, 56);
 
-            a {
-              padding: 10px 0;
-              padding-left: 10px;
-              width: 100%;
-              color: $light-color;
-              &:hover {
-                background: #00000095;
-              }
+          a {
+            background: white;
+            color: black;
+            padding: 10px 0;
+            padding-left: 10px;
+            width: 100%;
+            transition: 0.7s;
+            &:hover {
+              background: #00000075;
             }
           }
         }
@@ -435,9 +448,9 @@
   }
 }
 @media (max-width: 800px) {
-    #header .header {
-        gap: 170px;
-    }
+  #header .header {
+    gap: 170px;
+  }
 }
 @media (max-width: 780px) {
   #header .header {
@@ -456,6 +469,7 @@
   }
 }
 @media (max-width: 728px) {
+
   #header .header--left img {
     width: 150px;
     height: 96px;
@@ -473,11 +487,15 @@
   }
 }
 @media (max-width: 650px) {
+
   #header .header {
-    gap: 158px;
+    gap: 128px;
   }
 }
-@media (max-width: 627px) {
+@media (max-width: 628px) {
+    #header .header {
+    gap: 100px;
+  }
   #welcome .welcome {
     h1 {
       margin-left: 18px;
@@ -488,14 +506,35 @@
   }
 }
 @media (max-width: 500px) {
-    #header .header {
-        gap: 0px;
-    }
-        #header .header .header--left img {
-        width: 118px;
+  #header .header {
+    gap: 0px;
+  }
+  #header .header .header--left img {
+    width: 118px;
+  }
+}
+@media (max-width: 460px) {
+   #header .header {
+        gap: 0;
     }
 }
-@media (max-width: 413px) {
+@media (max-width: 456px) {
+    #header .header {
+        gap: 10px;
+    }
+}
+@media (max-width: 431px) {
+    #header .header .header--left img {
+        width: 93px;
+    }
+}
+@media (max-width: 414px) {
+    //   #header .header {
+    //     gap: 0;
+    // }
+      #header .header .header--left img {
+        width: 100px;
+    }
   #header .header {
     gap: 0px;
     &--right .theme {
@@ -507,4 +546,10 @@
       }
     }
   }
+}
+
+@media (max-width: 412px) {
+    #header .header {
+        gap: 96px;
+    }
 }

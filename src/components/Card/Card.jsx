@@ -22,7 +22,7 @@ const Card = ({ item }) => {
     <div
       className="card"
       onClick={() => navigate(`/movieDetails/${item.id}`)}
-      style={{ boxShadow: dark && "none", border: dark && "none", background: dark ? "#656565" : "transparent" }}
+      style={{ boxShadow: dark && "none", border: dark && "2px solid rgba(255, 255, 255, 0.61)", background: "transparent" }}
     >
       <div className="card--img">
         {item.poster_path === null ? (

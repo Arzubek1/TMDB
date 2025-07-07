@@ -319,6 +319,21 @@
     height: 231px;
   }
 }
+@media (max-width: 639px) {
+  #topRated .topRated-title .janry {
+    display: none;
+  }
+  #topRated .topRated-title .recommended--films {
+    margin-top: -7px;
+    margin-right: -270px;
+    h1 {
+      font-size: 16px;
+    }
+  }
+  #topRated h1 {
+    margin-top: -30px;
+  }
+}
 @media (max-width: 591px) {
   .card {
     width: 221px;
@@ -331,17 +346,93 @@
     }
   }
 }
-@media (max-width: 538px) {
+@media (max-width: 590px) {
+  #topRated .topRated {
+    margin-right: 9px;
+  }
+  #topRated .topRated-title .recommended--films {
+    margin-right: -200px;
+  }
   .card {
-    width: 200px;
-    height: 254px;
+    width: 150px;
+    height: 223px;
+    h4 {
+      top: 166px;
+    }
+    h3 {
+      top: 176px;
+      font-size: 14px;
+    }
   }
 }
+@media (max-width: 585px) {
+  #topRated .topRated {
+    width: 100%;
+    margin-right: 20px;
+  }
+}
+@media (max-width: 575px) {
+  .card {
+    width: 140px;
+    height: 215px;
+  }
+}
+@media (max-width: 550px) {
+  #topRated {
+    h1 {
+      display: none;
+    }
+  }
+}
+@media (max-width: 550px) {
+  #topRated {
+    .container {
+      width: 100%;
+    }
+  }
+}
+@media (max-width: 518px) {
+  #topRated .topRated {
+    margin-left: 6px;
+    &--blocks {
+      justify-content: start;
+    }
+  }
+}
+@media (max-width: 498px) {
+  #topRated .topRated-title {
+   display: none;
+}
+  #topRated .topRated {
+    margin-left: -8px;
+  }
+     
+}
 @media (max-width: 491px) {
+      #topRated .container {
+        width: 98%;
+    }
   .card {
     width: 186px;
     height: 248px;
+    h3{
+      top: 210px;
+    }
+    h4{
+      top: 190px;
+    }
   }
+  #topRated .topRated-title .recommended--films__blocks {
+    margin-right: 320px;
+  }
+  #topRated .topRated--blocks {
+    margin-left: 50px;
+  }
+}
+@media (max-width: 468px) {
+    #topRated .topRated {
+        margin-left: -24px;
+    }
 }
 @media (max-width: 460px) {
   #topRated .topRated-title .recommended--films__blocks {
@@ -354,6 +445,9 @@
   }
 }
 @media (max-width: 431px) {
+      .card .circularProgressbar {
+        bottom: 50px;
+    }
   .card {
     width: 163px;
     height: 227px;
@@ -371,14 +465,31 @@
     height: 223px;
   }
 }
-@media (max-width: 396px) {
+@media (max-width: 397px) {
   #topRated .topRated-title .recommended--films__blocks {
     width: 191px;
     height: 109px;
   }
   .card {
-    width: 310px;
+    width: 150px;
+    height: 190px;
+    h4{
+      top: 140px;
+    }
+    h3{
+      top: 152px;
+    }
   }
+  
+}
+@media (max-width: 383px) {
+      .card .circularProgressbar {
+        bottom: 39px;
+    }
+    .card {
+        width: 143px;
+        height: 190px;
+    }
 }
 @media (max-width: 349px) {
   #topRated .topRated-title .recommended--films__blocks {

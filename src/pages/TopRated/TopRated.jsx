@@ -50,7 +50,7 @@ const TopRated = () => {
   return (
     <div
       id="topRated"
-      style={{ background: dark ? "#333" : "#fff", transition: "0.3s" }}
+      style={{ background: dark ? "rgb(1, 1, 55)" : "#fff", transition: "0.3s" }}
     >
       <div className="container">
         <h1 style={{ color: dark ? "white" : "#222" }}>

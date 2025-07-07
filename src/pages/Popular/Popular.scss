@@ -365,6 +365,17 @@
   }
 }
 @media (max-width: 638px) {
+  #popular .popular--blocks {
+    margin-left: 0;
+  }
+  #popular .popular-title .recommended--films {
+    margin-top: 0px;
+    margin-left: -200px;
+    align-items: start;
+  }
+  #popular .popular-title .janry {
+    display: none;
+  }
   #popular .popular-title .recommended--films__blocks {
     width: 257px;
     height: 152px;
@@ -394,6 +405,15 @@
     }
   }
 }
+@media (max-width: 556px) {
+  #popular .popular-title .recommended--films {
+    margin-left: -125px;
+  }
+  .card {
+    width: 199px;
+    height: 241px;
+  }
+}
 @media (max-width: 536px) {
   #popular .popular-title .recommended--films {
     margin-top: -12px;
@@ -412,6 +432,7 @@
     height: 234px;
     h3 {
       top: 190px;
+      font-size: 13px;
     }
     h4 {
       top: 180px;
@@ -424,8 +445,16 @@
     height: 223px;
   }
   #popular .popular-title .recommended--films__blocks {
-    width: 193px;
-    height: 123px;
+    width: 317px;
+    height: 136px;
+  }
+  #popular .popular-title .recommended--films {
+    margin-left: -60px;
+  }
+}
+@media (max-width: 461px) {
+  #popular .popular-title {
+    margin-left: 13px;
   }
 }
 @media (max-width: 456px) {
@@ -433,7 +462,7 @@
     gap: 0px;
   }
 }
-@media (max-width: 411px) {
+@media (max-width: 412px) {
   #header .header {
     gap: 70px;
   }
@@ -446,8 +475,14 @@
     h3 {
       top: 172px;
       font-size: $font-size * 0.6;
+      font-size: 10px;
     }
   }
+}
+@media (max-width: 408px) {
+    #popular .popular-title .recommended--films {
+        margin-left: -32px;
+    }
 }
 @media (max-width: 382px) {
   .card {
@@ -459,26 +494,26 @@
   }
 }
 @media (max-width: 360px) {
-    .card {
-        width: 126px;
-        height: 188px;
-    }
+  .card {
+    width: 126px;
+    height: 188px;
+  }
 }
 @media (max-width: 327px) {
-    .card {
-        width: 121px;
-        height: 181px;
-        h4{
-          top: 140px;
-        }
-        h3{
-          top: 156px;
-        }
+  .card {
+    width: 121px;
+    height: 181px;
+    h4 {
+      top: 140px;
     }
+    h3 {
+      top: 156px;
+    }
+  }
 }
 @media (max-width: 316px) {
-    .card {
-        width: 117px;
-        height: 179px;
-    }
+  .card {
+    width: 117px;
+    height: 179px;
+  }
 }

@@ -156,7 +156,20 @@ const translations = {
     "en-US": "actresses",
     "ru-RU": "актрисы",
     "ky-KG": "актрисалар",
+  },theme: {
+    "en-US": "Theme",
+    "ru-RU": "Тема",
+    "ky-KG": "Тема",
   },
+  dark: {
+    "en-US": "dark",
+    "ru-RU": "тёмный",
+    "ky-KG": "кара",
+  },light: {
+    "en-US": "light",
+    "ru-RU": "светлый",
+    "ky-KG": "жарык",
+  }
 };
 
 export default translations;

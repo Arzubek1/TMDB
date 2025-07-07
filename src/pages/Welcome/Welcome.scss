@@ -188,14 +188,42 @@
     width: $index * 5;
   }
 }
+
 @media (max-width: 628px) {
   #welcome .welcome--form {
     width: $index * 4.5;
   }
+  .suggest--films {
+    padding-left: 60px;
+  }
+  .suggest--films__wrapper--block {
+    overflow-x: hidden;
+    flex-wrap: wrap;
+    padding-bottom: 30px;
+    width: $index * 6;
+  }
+  .fade-right {
+    display: none;
+  }
 }
+@media (max-width: 628px) {
+  .suggest--films__wrapper--block {
+    width: 564px;
+  }
+}
+
+@media (max-width: 625px) {
+  .suggest--films__wrapper--block {
+    width: 530px;
+  }
+}
+
 @media (max-width: 616px) {
   #header .header {
     gap: 133px;
+  }
+  .suggest--films {
+    padding-left: 42px;
   }
 }
 @media (max-width: 598px) {
@@ -203,7 +231,18 @@
     gap: 105px;
   }
 }
+@media (max-width: 591px) {
+  .suggest--films {
+    padding-left: 80px;
+  }
+}
 @media (max-width: 570px) {
+  .suggest--films__wrapper--block {
+    width: 489px;
+  }
+  .suggest--films {
+    padding-left: 56px;
+  }
   #welcome .welcome {
     h1 {
       margin-top: 50px;
@@ -220,35 +259,118 @@
       }
     }
   }
-  .suggest--films {
-    padding-left: 33px;
-}
 }
 @media (max-width: 556px) {
-    #header .header {
-        gap: 67px;
-    }
+  #header .header {
+    gap: 67px;
+  }
+}
+@media (max-width: 554px) {
+  .suggest--films {
+    padding-left: 42px;
+  }
+  .card {
+    width: 200px;
+    height: 241px;
+  }
+}
+@media (max-width: 536px) {
+  .suggest--films {
+    padding-left: 55px;
+  }
+  .suggest--films__wrapper--block {
+    width: 460px;
+  }
 }
 @media (max-width: 523px) {
-    #header .header {
-        gap: 41px;
-    }
+  #header .header {
+    gap: 41px;
+  }
 }
 @media (max-width: 511px) {
-    #welcome .welcome--form {
-        width: 352px;
-        button {
-        width: 61px;
+  .suggest--films{
+    padding-left: 40px;
+  }
+  .suggest--films__wrapper--block {
+    width: 430px;
+  }
+  #welcome .welcome--form {
+    width: 352px;
+    button {
+      width: 61px;
     }
+  }
+}
+@media (max-width: 500px) {
+  #welcome .welcome--form {
+    width: 352px;
+    height: $index * 0.44;
+    button {
+      height: 100%;
+    }
+  }
+}
+@media (max-width: 478px) {
+  #welcome .welcome--form {
+    position: absolute;
+    right: 40px;
+    top: 170px;
+  }
+}
+@media (max-width: 470px) {
+    .suggest--films__wrapper--block {
+        width: 400px;
     }
 }
+@media (max-width: 460px) {
+  #welcome .welcome--form button {
+    height: 94%;
+  }
+  #welcome .welcome--form {
+    right: 30px;
+  }
+}
+@media (max-width: 441px) {
+    .suggest--films__wrapper--block {
+        width: 366px;
+    }
+}
+@media (max-width: 420px) {
+  #welcome .welcome--form {
+    right: 20px;
+  }
+}
+
 @media (max-width: 412px) {
-    #welcome .welcome--form {
-        width: 290px;
-        input{
-          &::placeholder{
-            font-size: $font-size * .63;
-          }
-        }
+  #welcome .welcome--form {
+    width: 290px;
+    input {
+      &::placeholder {
+        font-size: $font-size * 0.63;
+      }
+    }
+  }
+  .suggest--films__title--btns {
+    display: none;
+  }
+}
+@media (max-width: 406px) {
+    .suggest--films__wrapper--block {
+        width: 334px;
+    }
+}
+@media (max-width: 396px) {
+    .card {
+        width: 152px;
+    }
+}
+@media (max-width: 392px) {
+  #welcome .welcome--form {
+    top: 220px;
+  }
+}
+@media (max-width: 384px) {
+    .suggest--films {
+        padding-left: 30px;
     }
 }

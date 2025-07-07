@@ -49,7 +49,7 @@ function App() {
   return (
     <div
       style={{
-        background: dark ? "#3f3f3f" : "#f5f5f5",
+        background: dark ? "rgb(1, 1, 55)" : "#f5f5f5",
         minHeight: "100vh",
         transition: "background 0.4s ease",
       }}
